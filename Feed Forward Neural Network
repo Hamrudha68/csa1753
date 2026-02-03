@@ -1,0 +1,4 @@
+import math
+x=0.6; w=0.5; b=0.1
+y=1/(1+math.exp(-(w*x+b)))
+print(y)
