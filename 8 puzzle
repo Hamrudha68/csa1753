@@ -1,0 +1,16 @@
+from collections import deque
+def solve(start):
+    goal=(1,2,3,4,5,6,7,8,0)
+    q=deque([(start,[])])
+    v=set([start])
+    while q:
+        s,p=q.popleft()
+        if s==goal: return p
+        i=s.index(0)
+        for j in [i-3,i+3,i-1,i+1]:
+            if 0<=j<9:
+                l=list(s); l[i],l[j]=l[j],l[i]
+                t=tuple(l)
+                if t not in v:
+                    v.add(t); q.append((t,p+[t]))
+print(solve((1,2,3,4,0,5,6,7,8)))
