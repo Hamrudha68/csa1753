@@ -1,0 +1,14 @@
+from collections import deque
+def jug(a,b,t):
+    q=deque([(0,0)])
+    v=set()
+    while q:
+        x,y=q.popleft()
+        if x==t or y==t:
+            print(x,y); return
+        for s in [(a,y),(x,b),(0,y),(x,0),
+                  (x-min(x,b-y),y+min(x,b-y)),
+                  (x+min(y,a-x),y-min(y,a-x))]:
+            if s not in v:
+                v.add(s); q.append(s)
+jug(4,3,2)
