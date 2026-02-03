@@ -1,0 +1,12 @@
+from collections import deque
+def safe(m,c): return m==0 or m>=c
+q=deque([(3,3,0)])
+v=set()
+while q:
+    m,c,b=q.popleft()
+    if (m,c,b)==(0,0,1): print("Solved"); break
+    for i,j in [(1,0),(0,1),(1,1),(2,0),(0,2)]:
+        nm,nc=(m-i,c-j) if b==0 else (m+i,c+j)
+        if 0<=nm<=3 and 0<=nc<=3 and safe(nm,nc) and safe(3-nm,3-nc):
+            s=(nm,nc,1-b)
+            if s not in v: v.add(s); q.append(s)
