@@ -1,0 +1,1 @@
+bestfs :- write('Uses heuristic').
