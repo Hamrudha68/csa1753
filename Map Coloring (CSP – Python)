@@ -1,0 +1,5 @@
+import itertools
+colors=['R','G','B']
+for c in itertools.product(colors,repeat=3):
+    if c[0]!=c[1] and c[1]!=c[2]:
+        print(c)
