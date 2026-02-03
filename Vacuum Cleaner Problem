@@ -1,0 +1,6 @@
+room={'A':'Dirty','B':'Dirty'}
+pos='A'
+if room[pos]=='Dirty': room[pos]='Clean'
+pos='B'
+if room[pos]=='Dirty': room[pos]='Clean'
+print(room)
