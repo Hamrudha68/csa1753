@@ -1,0 +1,3 @@
+def astar():
+    print("A* uses f(n)=g(n)+h(n)")
+astar()
