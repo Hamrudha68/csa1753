@@ -1,0 +1,6 @@
+def solve(q=[]):
+    if len(q)==8: print(q); return
+    for c in range(8):
+        if all(c!=q[i] and abs(c-q[i])!=len(q)-i for i in range(len(q))):
+            solve(q+[c])
+solve()
