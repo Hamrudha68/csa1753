@@ -1,0 +1,6 @@
+def dfs(g,s,v=set()):
+    print(s,end=" ")
+    v.add(s)
+    for i in g[s]:
+        if i not in v: dfs(g,i,v)
+dfs({1:[2,3],2:[4],3:[],4:[]},1)
