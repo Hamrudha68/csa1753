@@ -1,0 +1,13 @@
+def ab(d,a,b,m):
+    if d==0: return 1
+    if m:
+        for _ in range(2):
+            a=max(a,ab(d-1,a,b,0))
+            if a>=b: break
+        return a
+    else:
+        for _ in range(2):
+            b=min(b,ab(d-1,a,b,1))
+            if a>=b: break
+        return b
+print(ab(3,-9,9,1))
