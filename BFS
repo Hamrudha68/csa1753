@@ -1,0 +1,9 @@
+def bfs(g,s):
+    v=[s]; q=[s]
+    while q:
+        n=q.pop(0); print(n,end=" ")
+        for i in g[n]:
+            if i not in v:
+                v.append(i); q.append(i)
+g={1:[2,3],2:[4],3:[],4:[]}
+bfs(g,1)
